@@ -1,0 +1,17 @@
+import tensorflow as tf
+
+#创建常量m1,m2 op
+m1 = tf.constant([[2,2]])
+m2 = tf.constant([[2],[3]])
+#创建矩阵乘法op
+product = tf.matmul(m1,m2)
+
+#定义会话，启动默认图
+sess =  tf.Session()
+#调用sess的run方法执行矩阵乘法op
+print(sess.run(product))
+sess.close()
+
+第二种方式
+with tf.Session() as sess:
+    print(sess.run(product))
