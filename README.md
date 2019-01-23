@@ -24,5 +24,8 @@ train-labels-idx1-ubyte.gz包含 训练集图片对应的数字标签
 t10k-images-idx3-ubyte.gz包含  测试集图片 - 10000 张 图片
 t10k-labels-idx1-ubyte.gz包含  测试集图片对应的数字标签
 
+首先选用简单的两层神经网络，训练分类成功率可以达到95%，代码见2.1
+
+
 
 
