@@ -13,8 +13,16 @@ TensorFlow 是一个编程系统, 使用图来表示计算任务. 图中的节�
 
 一个 TensorFlow 图描述了计算的过程. 为了进行计算, 图必须在 会话 里被启动. 会话 将图的 op 分发到诸如 CPU 或 GPU 之类的 设备 上, 同时提供执行 op 的方法. 这些方法执行后, 将产生的 tensor 返回. 在 Python 语言中, 返回的 tensor 是 numpy ndarray 对象; 在 C 和 C++ 语言中, 返回的 tensor 是 tensorflow::Tensor 实例.
 
-详细见http://www.tensorfly.cn/tfdoc/get_started/basic_usage.html
+详细见http://www.tensorfly.cn/tfdoc/get_started/basic_usage.html 
 
+二、MNIST数据集训练
+
+MNIST是在机器学习领域中的一个经典问题。该问题解决的是把28x28像素的灰度手写数字图片识别为相应的数字，其中数字的范围从0到9.
+http://yann.lecun.com/exdb/mnist/提供了训练集与测试集数据的下载。
+train-images-idx3-ubyte.gz包含 训练集图片 - 55000 张 训练图片, 5000 张 验证图片
+train-labels-idx1-ubyte.gz包含 训练集图片对应的数字标签
+t10k-images-idx3-ubyte.gz包含  测试集图片 - 10000 张 图片
+t10k-labels-idx1-ubyte.gz包含  测试集图片对应的数字标签
 
 
 
