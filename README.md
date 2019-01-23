@@ -94,7 +94,17 @@ t10k-labels-idx1-ubyte.gz包含  测试集图片对应的数字标签
 RNN一般指代时间递归神经网络。单纯递归神经网络因为无法处理随着递归，权重指数级爆炸或消失的问题（Vanishing gradient problem），难以捕捉长期时间关联；而结合不同的LSTM可以很好解决这个问题。时间递归神经网络可以描述动态时间行为，因为和前馈神经网络（feedforward neural network）接受较特定结构的输入不同，RNN将状态在自身网络中循环传递，因此可以接受更广泛的时间序列结构输入。
 
 
-  
+  RNN主要解决序列数据的处理，比如文本、语音、视频等等。这类数据的样本间存在顺序关系，每个样本和它之前的样本存在关联。比如说，在文本中，一个词和它前面的词是有关联的；在气象数据中，一天的气温和前几天的气温是有关联的。一组观察数据定义为一个序列，从分布中可以观察出多个序列。
+
+参考博客 ： https://feisky.xyz/machine-learning/rnn/
+
+http://colah.github.io/posts/2015-08-Understanding-LSTMs/
+
+http://karpathy.github.io/2015/05/21/rnn-effectiveness/
+
+  lstm训练mnist代码见2.4
+
+
 
 
 
