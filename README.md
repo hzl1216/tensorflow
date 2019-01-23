@@ -18,7 +18,7 @@ TensorFlow 是一个编程系统, 使用图来表示计算任务. 图中的节�
 二、MNIST数据集训练
 
 MNIST是在机器学习领域中的一个经典问题。该问题解决的是把28x28像素的灰度手写数字图片识别为相应的数字，其中数字的范围从0到9.
-http://yann.lecun.com/exdb/mnist/提供了训练集与测试集数据的下载。
+http://yann.lecun.com/exdb/mnist/  提供了训练集与测试集数据的下载。
 train-images-idx3-ubyte.gz包含 训练集图片 - 55000 张 训练图片, 5000 张 验证图片
 train-labels-idx1-ubyte.gz包含 训练集图片对应的数字标签
 t10k-images-idx3-ubyte.gz包含  测试集图片 - 10000 张 图片
