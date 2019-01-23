@@ -1,0 +1,23 @@
+import tensorflow as tf
+
+#fetch 获取数据
+input1 = tf.constant(3.0)
+input2 = tf.constant(2.0)
+input3 = tf.constant(4.0)
+
+add = tf.add(input1,input2)
+mul = tf.multiply(input3,add)
+
+with tf.Session() as sess:
+#fetch 获取print
+    result = sess.run([mul,add])
+    print(result)
+    
+#feed 输入数据
+input1 = tf.placeholder(tf.float32)
+input2 = tf.placeholder(tf.float32)
+output = tf.multiply(input1,input2)
+
+with tf.Session() as sess:
+#feed 输入input1,input2 fetch output
+    print(sess.run(output,feed_dict = { input1:2.5,input2:1.3}))
