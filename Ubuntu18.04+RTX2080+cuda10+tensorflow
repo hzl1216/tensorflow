@@ -1,0 +1,80 @@
+一、装ubuntu18.04
+
+首先是下载ubuntu18.04的镜像文件
+
+Ubuntu 18.04.1-LTS-桌面版-64位
+下载地址:
+http://releases.ubuntu.com/18.04/ubuntu-18.04.1-desktop-amd64.iso
+bt种子:
+http://releases.ubuntu.com/18.04/ubuntu-18.04.1-desktop-amd64.iso.torrent
+
+
+二、安装RTX2080驱动
+
+正常显卡的驱动在sudo apt-get update之后，都会在软件和更新里面的附加驱动中显示，或者通过指令 sudo ubuntu-drivers autoinstall就能自动安装，奈何2080太太太太太太太太太新了！附加驱动根本找不到它好么！我先把软件更新源换成了aliyun，还是找不到，绝望中。
+
+多亏了万能的淘宝啊，热心的淘宝小哥给了我一个更新方案如下：
+
+1. 更新apt-get源列表
+sudo apt-get update
+sudo apt-get upgrade
+2. 添加驱动源
+sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo apt-get update
+然后在软件和更新的附加驱动里面就可以找到2080的驱动了！
+没错，就是那个nvidia-drivers-410，点上它后点击apply changes，等待五分钟左右驱动安装结束，然后重启电脑，你会发现界面都变得正常了。
+
+重启后在指令行敲
+
+nvidia-settings
+重启后在指令行敲恩，就可以看到期待已久的显卡信息了。
+
+
+三、cuda+cudnn
+
+cuda从官网https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=deblocal上
+
+下载cuda10版本，因为只有这个支持18.04，官网同时提供了安装指令，很良心。注意运行指令需要cd到包含该文件的文件夹目录下。
+
+下载完解压文件，运行以下指令把解压后相应的文件拷贝到对应的CUDA目录下即可（要cd到含cudnn文件的目录下）
+
+sudo cp cuda/include/cudnn.h /usr/local/cuda/include/
+sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64/
+sudo chmod a+r /usr/local/cuda/include/cudnn.h
+sudo chmod a+r /usr/local/cuda/lib64/libcudnn*
+
+四、ananconda+tensorflow
+
+Anaconda安装与使用链接: https://blog.csdn.net/qq_31610789/article/details/80646276
+
+清华镜像源download link: https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/
+先用Anaconda创建python环境：
+
+conda create -n 环境名 python=3.6
+
+环境名就是你自己定义的一个环境名称！
+
+环境创建完成之后，source activate激活环境。
+
+先把conda换成清华镜像啊，不然下载慢到你怀疑人生。具体方法为：
+
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+
+conda config --set show_channel_urls yes
+
+然后运行指令
+
+conda install tensorflow-gpu=1.5.0
+
+短暂的等待后，就完成安装了。接着用spyder的用户注意了，需要重装下spyder才能调用tensorflow
+
+conda install spyder
+
+
+--------------------- 
+作者：Mosay_dhu 
+来源：CSDN 
+原文：https://blog.csdn.net/weixin_40859436/article/details/83152249 
+版权声明：本文为博主原创文章，转载请附上博文链接！
