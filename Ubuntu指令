@@ -1,6 +1,6 @@
 1.修改sudo gedit ~/.bashrc
 
-2.添加export PATH=/home/lishanliao/anaconda3/bin:$PATH
+2.添加export PATH=/home/jackhong/anaconda3/bin:$PATH
 
 3.source ~/.bashrc
 
