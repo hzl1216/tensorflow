@@ -1,0 +1,16 @@
+解决github Permission denied (publickey)问题
+
+1通过命令cd ~/.ssh切换到当前计算机当前用户的.ssh目录下
+2通过命令ssh-keygen生成SSH key
+3根据命令ssh-keygen提示输入key要存储的位置以及密码
+4生成key后在指定要存储的地方找到id_rsa.pub
+5在github的Settings中新建一个SSH key，将id_rsa.pub中的内容复制到Key中
+配置git的用户名和邮箱 
+git config --global user.name 'aaa'
+git config --global user.email 'bbb'
+
+通过命令ssh-add解决每次操作都需要输入key的密码的问题
+eval $(ssh-agent)
+ssh-add
+
+以上内容参考自https://www.jianshu.com/p/f22d02c7d943
