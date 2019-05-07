@@ -35,3 +35,16 @@ git push -u origin master
 解决Git中fatal: refusing to merge unrelated histories
 在你操作命令后面加--allow-unrelated-histories 
 git pull origin master --allow-unrelated-histories 
+
+在Git的版本控制中，可能有些文件是不需要加入控制的，那我们在提交代码时就需要忽略这些文件
+输入 touch .gitignore 在文件夹就生成了一个“.gitignore”文件
+输入 vim .gitignore 启动编辑器
+然后在”.gitignore” 文件里输入你要忽略的文件夹及其文件就可以了。
+如：
+  *.class
+  *.apk
+  bin/
+  gen/
+  .settings/
+  proguard
+保存后在文件夹就生成了一个“.gitignore”文件
