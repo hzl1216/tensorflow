@@ -1,0 +1,7 @@
+使用LXD+ZFS搭建实验室公共GPU服务器 https://shenxiaohai.me/2018/12/03/gpu-server-lab/
+
+使用docker配置服务器 
+安装docker https://yeasy.gitbooks.io/docker_practice/install/ubuntu.html
+
+ubuntu18.04配置nvidia docker和远程连接ssh+远程桌面连接（一）   https://www.bbsmax.com/A/x9J2bYBEJ6/
+安装 nvidia-docker2 https://blog.csdn.net/xiangxianghehe/article/details/81216424
