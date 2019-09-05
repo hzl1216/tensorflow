@@ -20,6 +20,10 @@ Anaconda环境的创建
 其中hzl表示创建环境的名字，后面python=3.5表示创建的版本。在创建环境的时候同时安装包
 conda create -n hzl python=3.5 numpy pandas
 
+conda install -c conda-forge tensorflow-gpu
+
+conda install pytorch torchvision -c pytorch
+
 Anaconda环境的激活
 
 source activate hzl
